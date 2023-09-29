@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'core',
     'voiceT',
     'rest_framework',
-    'drf-spectacular',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
