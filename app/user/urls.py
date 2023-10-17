@@ -8,5 +8,6 @@ from user import views as user_views
 app_name = 'user'
 
 urlpatterns = [
-    path('create/', user_views.CreateUserView.as_view(), name='create')
+    path('create/', user_views.CreateUserView.as_view(), name='create'),
+    path('token/', user_views.CreateTokenView.as_view(), name='token'),
 ]
