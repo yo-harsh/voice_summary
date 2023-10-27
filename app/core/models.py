@@ -1,6 +1,8 @@
 """
 Database models.
 """
+import uuid
+import os
 
 from django.db import models
 from django.contrib.auth.models import (
@@ -9,6 +11,14 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 from django.conf import settings
+
+
+def audio_file_path(instance, filename):
+    """gen file path"""
+    ext = os.path.splitext(filename)[1]
+    filename = f'{uuid.uuid4()}{ext}'
+
+    return os.path.join('upload', 'aduio', filename)
 
 
 class UserManager(BaseUserManager):
@@ -60,3 +70,10 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AudioFile(models.Model):
+    file = models.FileField(upload_to=audio_file_path)
+
+
+
