@@ -74,6 +74,3 @@ class Recipe(models.Model):
 
 class AudioFile(models.Model):
     file = models.FileField(upload_to=audio_file_path)
-
-
-

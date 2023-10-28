@@ -237,7 +237,8 @@ class PrivateRecipeAPITests(TestCase):
 #             img = Image.new('RGB', (10, 10))
 #             img.save(ntf, format='JPEG')
 #             ntf.seek(0)
-#             response = self.client.post(url, {'image': ntf}, format='multipart')
+#             response = self.client.post(url, {'image': ntf},
+# format='multipart')
 
 #         self.recipe.refresh_from_db()
 
@@ -248,7 +249,8 @@ class PrivateRecipeAPITests(TestCase):
 #     def test_upload_image_bad_request(self):
 #         # test uploading an invalid image
 #         url = image_upload_ul(self.recipe.id)
-#         response = self.client.post(url, {'image': 'wrong'}, format='multipart')
+#         response = self.client.post(url, {'image': 'wrong'},
+# format='multipart')
 
 #         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 

@@ -44,5 +44,3 @@ class AudioView(viewsets.ModelViewSet):
         # Do something with the transcript
 
         return transcript
-
-
