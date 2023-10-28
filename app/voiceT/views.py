@@ -29,7 +29,7 @@ class AudioView(viewsets.ModelViewSet):
 
     def process_audio(self, pk):
         load_dotenv()
-        openai.api_key = os.getenv('OPENAI_API_KEY')
+        openai.api_key = os.environ.get('OPENAI_API_KEY')
         print(openai.api_key)
         audio = get_object_or_404(AudioFile, pk=pk)
 
