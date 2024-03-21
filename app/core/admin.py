@@ -7,6 +7,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core import models
+from .models import AudioFile
 
 
 class UserAdmin(BaseUserAdmin):
@@ -52,7 +53,15 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
+# last changes
 
+# Register your models here.
+class AudioFile(admin.ModelAdmin):
+    # Define the list of fields to display in the admin list view
+    list_display = ('id', 'file', 'created_at')
+
+    # Make the 'created_at' field clickable for sorting
+    list_display_links = ('created_at',)
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)

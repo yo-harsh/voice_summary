@@ -74,3 +74,12 @@ class Recipe(models.Model):
 
 class AudioFile(models.Model):
     file = models.FileField(upload_to=audio_file_path)
+    created_at = models.DateTimeField(auto_now_add=True)# last changes
+
+    # last changes
+    class Meta:
+        # Specify the custom table name
+        db_table = 'audio_file'
+
+    def __str__(self):
+        return f"Entry: {self.file}"
