@@ -11,7 +11,7 @@ EXPOSE 8000
 
 ARG DEV=false
 RUN python -m venv /py && \
-    /py/bin/pip install --upgrade pip && \
+    /py/bin/python -m pip install pip==23.3.2 && \
     apk add --update --no-cache postgresql-client ffmpeg && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev linux-headers && \
